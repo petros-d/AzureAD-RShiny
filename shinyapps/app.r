@@ -37,7 +37,7 @@ server <- function(input, output, session)
     if(!has_auth_code(params))
         return()
 
-    token <- get_azure_token(resource="openid", tenant, app, authorize_args=list(redirect_uri="http://localhost:5000"),
+    token <- get_azure_token(resource=resource, tenant, app, authorize_args=list(redirect_uri="http://localhost:5000"),
                              use_cache=FALSE, version=2, auth_code=params$code)
 
     output$token <- renderPrint(token)

@@ -12,6 +12,6 @@ COPY shinyapps /srv/shiny-server/
 # make all app files readable (solves issue when dev in Windows, but building in Ubuntu)
 RUN chmod -R 755 /srv/shiny-server/
 
-EXPOSE 3838
+EXPOSE 5000
 
 CMD ["/usr/bin/shiny-server.sh"]
